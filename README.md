@@ -1,2 +1,5 @@
 # qa_cube
-Some assorted QA tools.
+Various tools useful for QA written in `ruby`.
+
+Current contents:
+ - Sheets-Appender
