@@ -1,3 +1,3 @@
-module QACube
-  VERSION = "0.0.1"
+module QaCube
+  VERSION = "0.0.4"
 end
