@@ -5,8 +5,7 @@ require 'googleauth/stores/file_token_store'
 
 require 'fileutils'
 
-
-module QACube
+module QaCube
   class SheetsAppender
 
     OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'

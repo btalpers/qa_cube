@@ -9,8 +9,8 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Bennett Talpers"]
   spec.email         = ["bennett.talpers@gmail.com"]
 
-  spec.summary       = %q{Allows a user to easily append data to a Google Sheets sheet.}
-  spec.description   = %q{Code taken from the examples found on https://developers.google.com/sheets/api/samples and parameterized, so it can be plugged & easily to automated QA projects.}
+  spec.summary       = %q{A collection of QA tools.}
+  spec.description   = %q{A collection of QA tooling. Currently only includes sheetsappender, which is a tool for appending data to an existing google sheets page}
   spec.homepage      = "https://github.com/btalpers/qa_cube"
 
   if spec.respond_to?(:metadata)
@@ -20,7 +20,7 @@ Gem::Specification.new do |spec|
       "public gem pushes."
   end
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+  spec.files = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
   spec.bindir        = "exe"
