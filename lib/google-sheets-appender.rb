@@ -10,10 +10,10 @@ module QaCube
 
     OOB_URI = 'urn:ietf:wg:oauth:2.0:oob'
     APPLICATION_NAME = 'Google Sheets API Test Result Appender'
-    CREDENTIALS_PATH = File.join(Dir.home, '.credentials','sheetsappender.yaml')
     SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS
 
-    def initialize(sheet_name:, spreadsheet_id:, range:, verbose: nil, client_secrets_path:)
+    def initialize(sheet_name:, spreadsheet_id:, range:, verbose: nil, client_secrets_path:, workspace_dir:)
+      @credential_path = File.join(workspace_dir, '.credentials','sheetsappender.yaml')
       @verbose ||= verbose
       if @verbose.nil?
         @verbose = false
@@ -35,9 +35,9 @@ module QaCube
     end
 
     def authorize
-      FileUtils.mkdir_p(File.dirname(CREDENTIALS_PATH))
+      FileUtils.mkdir_p(File.dirname(@credentials_path))
       client_id = Google::Auth::ClientId.from_file(@client_secrets_path)
-      token_store = Google::Auth::Stores::FileTokenStore.new(file: CREDENTIALS_PATH)
+      token_store = Google::Auth::Stores::FileTokenStore.new(file: @credentials_path)
       authorizer = Google::Auth::UserAuthorizer.new(client_id, SCOPE, token_store)
       user_id = 'default'
       credentials = authorizer.get_credentials(user_id)
