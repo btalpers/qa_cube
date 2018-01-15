@@ -13,7 +13,7 @@ module QaCube
     SCOPE = Google::Apis::SheetsV4::AUTH_SPREADSHEETS
 
     def initialize(sheet_name:, spreadsheet_id:, range:, verbose: nil, client_secrets_path:, workspace_dir:)
-      @credential_path = File.join(workspace_dir, '.credentials','sheetsappender.yaml')
+      @credentials_path = File.join(workspace_dir, '.credentials','sheetsappender.yaml')
       @verbose ||= verbose
       if @verbose.nil?
         @verbose = false
