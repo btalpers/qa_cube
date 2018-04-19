@@ -1,6 +1,6 @@
 # QaCube
 
-Will hopefully one day be a collection of tools useful for QA's/Test automation engineers working with *ruby*.
+Will hopefully one day be a collection of tools useful for QA's/Test automation engineers working with *ruby*. Currently it's just one tool.
 
 Current contents:
  - Sheets-Appender
