@@ -1,6 +1,6 @@
 # QaCube
 
-Various tools useful for QA written in `ruby`.
+Will hopefully one day be a collection of tools useful for QA's/Test automation engineers working with *ruby*.
 
 Current contents:
  - Sheets-Appender
@@ -24,14 +24,20 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+#### Sheets Appender
+```
+require 'google-sheets-appender'
 
-## Development
+range = 'A1:A'
+spreadsheet_id = '0123456789abcdef'
+sheet_name = 'ASheetName'
+client_secret_path = '/path/to/client/secret/json/you/got/from/developer.google.com/'
+workspace = '/path/to/local/key/location/' # You'll be prompted to generate a new key if no `.credentials` dir containing a valid key is found here.
 
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+appender = QaCube::SheetsAppender.new(spreadsheet_id: spreadsheet_id, sheet_name: sheet_name, client_secrets_path: client_secret_path, range: range, workspace_dir: workspace_dir)
+appender.append(values: [[a,b,c,d,e,f,g]])
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
+```
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/btalpers/qa_cube.
