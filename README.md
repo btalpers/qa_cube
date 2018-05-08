@@ -31,8 +31,8 @@ require 'google-sheets-appender'
 range = 'A1:A'
 spreadsheet_id = '0123456789abcdef'
 sheet_name = 'ASheetName'
-client_secret_path = '/path/to/client/secret/json/you/got/from/developer.google.com/'
-workspace = '/path/to/local/key/location/' # You'll be prompted to generate a new key if no `.credentials` dir containing a valid key is found here.
+client_secret_path = '/directory/containing/client/secret/file/'
+workspace = '/directory/containing/credentials/directory/' # You'll be prompted to generate a new key if no `.credentials` dir containing a valid key is found here.
 
 appender = QaCube::SheetsAppender.new(spreadsheet_id: spreadsheet_id, sheet_name: sheet_name, client_secrets_path: client_secret_path, range: range, workspace_dir: workspace_dir)
 appender.append(values: [[a,b,c,d,e,f,g]])
