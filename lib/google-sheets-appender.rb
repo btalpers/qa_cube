@@ -26,6 +26,12 @@ module QaCube
       @range = "\'#{sheet_name}\'!#{range}"
     end
 
+    # returns a 'ValueRange' (see: https://www.rubydoc.info/github/google/google-api-ruby-client/Google/Apis/SheetsV4/ValueRange)
+    def read_sheet
+      sheet = @service.get_spreadsheet_values(@spreadsheet_id, @range)
+      sheet
+    end
+
     def append(values:)
       request_body = Google::Apis::SheetsV4::ValueRange.new({values: values})
       response = @service.append_spreadsheet_value(@spreadsheet_id, @range, request_body, value_input_option: "USER_ENTERED")
