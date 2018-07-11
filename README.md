@@ -40,4 +40,4 @@ appender.append(values: [[a,b,c,d,e,f,g]])
 ```
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/btalpers/qa_cube.
+Bug reports and pull requests are welcome on GitHub at https://github.com/btalpers/qa_cube
